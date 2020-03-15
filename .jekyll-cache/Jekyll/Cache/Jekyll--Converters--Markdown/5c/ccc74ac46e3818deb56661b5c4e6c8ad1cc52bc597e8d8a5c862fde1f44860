@@ -1,0 +1,12 @@
+I"�<p>PostMan</p>
+
+<p>I had been tasked with removing the Topic Modelling and Sentiment Analysis sections from the site as they either weren’t completed (made by students from the previous semester who have since left) or aren’t working correctly/up to standard. This required me to know/understand the basic structure of the project in order to find what to remove as well as the knowledge on how ReactJS handle routes. I did this with Liams supervision just to make sure that what I was doing was correct.</p>
+
+<p>It was also at this point that I was taught more about how they tested their project before making pull requests so using the commands</p>
+<ul>
+  <li>Npm I -D</li>
+  <li>Npm run tests</li>
+</ul>
+
+<p>On the second lesson Trent and Liam got me to write a test for the user authentication they had just finished. Which was great as, though im unable to write code to for a authentication system for the site, it allowed to go through what they’ve done and understand</p>
+:ET
