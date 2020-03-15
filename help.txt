@@ -1,0 +1,8 @@
+git commands:
+
+git pull origin gh-pages
+git push origin gh-pages
+
+Jekyll:
+
+bundle exec jekyll page "*name-your-page*"
