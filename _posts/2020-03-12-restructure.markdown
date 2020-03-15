@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Site- Restructure"
+title:  "Site Restructure"
 date:   2020-03-12 18:17:51 +1300
 categories: jekyll update
 ---
