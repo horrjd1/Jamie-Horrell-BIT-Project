@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Scrum"
-date:   2020-03-07 19:33:31 +1300
+date:   2020-03-09 19:33:31 +1300
 categories: jekyll update
 ---
 Today our team held a scrum for Sprint 8. This meeting mainly focused on brainstorming a revised file structure for the site as it was becoming quite convoluted and repetitive. We also thought that a new structure may be easier to grasp for new students coming into the project in future semesters. We also decided on a rough structure for the database. Pictures from the brainstorm are below. We also decided that we would use this sprint to add more data sources as per the clients request and add some options to the graphs (filtering)
