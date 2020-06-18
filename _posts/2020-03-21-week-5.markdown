@@ -1,0 +1,85 @@
+---
+layout: post
+title: "Minor Additions"
+date: 2020-03-21 18:17:51 +1300
+categories: jekyll update
+---
+
+# Request Data Pre preprocessing
+
+I was tasked with cleaning the users submission before it gets checked for in the database. This seemed like a small task but the challenge was reading through the code in the backend to find where I needed to clean the users input. I cleaned it by converting it to lower case and removing spaces at the start and end, as cleaning the input any further would have effected the searching for real words in the db. I did this my using the following code:
+
+```
+const cleanedWords = value.words.map((word)=>word.trim().toLowerCase());
+```
+
+I was also still getting used to ES6s => syntax. This also gave me an opportunity to write some tests for the site to check that the cleaning was working as intended. I wrote a total of 4 tests. An example of one:
+
+```
+    it('It should return data when given words starting or ending with spaces', async () => {
+      await Frequency.insertMany([
+        {
+          word: 'man',
+          year: '2003',
+          rank: 420,
+          count: 69,
+          freq: 0.002435,
+        },
+        {
+          word: 'man',
+          year: '2002',
+          rank: 600,
+          count: 56,
+          freq: 0.001435,
+        },
+        {
+          word: 'man',
+          year: '2001',
+          rank: 700,
+          count: 38,
+          freq: 0.000435,
+        },
+      ]);
+
+      const res = await request(app)
+        .post('/api/timeline/frequency')
+        .send({ words: [' man '], year_from: 2000, year_to: 2004 })
+        .expect(200);
+
+      await expect(res.body.data).to.be.an('array');
+      await expect(res.body.data[0].data).to.have.lengthOf(3);
+    });
+```
+
+The other can be found here although they are very similar to that one: https://github.com/op-analytics/NYT-Media-Analytics/pull/235/files
+
+
+# Login/Logout Button
+
+I was also tasked with Making the login/logout button for the site. This was my first time working with a component. In order to make this I had to learn about:
+
+- makeStyles from material-ui for styling the component
+- The states they were using for authentication
+- useDispatch from react redux
+
+The code that I used to make this button:
+
+```
+// In the Nav function
+const dispatch = useDispatch();
+const isAuthenticated = useSelector(state => state.user.authenticated);
+```
+
+```
+//In the html that gets returned
+{isAuthenticated ? (
+    <Button color="inherit" onClick={() => dispatch(unauthenticate())}>
+        Logout
+    </Button>
+) : (
+    <Link to="/login">
+        <Button color="inherit">Login</Button>
+    </Link>
+)}
+```
+I also had to use flexbox on the title and button in order to left and right align them.
