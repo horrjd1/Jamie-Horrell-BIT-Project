@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Lockdown"
+date:   2020-03-25 18:17:51 +1300
+categories: jekyll update
+---
+
+# The start of lockdown
+
+Week 6 technically only went from mon to wed and all classes were in the stages of being moved online. Trent, Liam and I had a meeting discussing what we would be doing over the holidays in relation to te project and deciding whether or not we should continue working on it over the holidays. We decided that we would continue over the holidays but with a smaller workload. We also decided to regularly meet during what would be our regular class times (1pm monday and thursday) to keep track of progress, discuss issues and distribute work.

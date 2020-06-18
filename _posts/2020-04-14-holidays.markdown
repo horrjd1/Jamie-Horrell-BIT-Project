@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Progress over holidays"
+date:   2020-04-14 20:23:34 +1300
+categories: jekyll update
+---
+
+# Working from home
+
+The first thing I had to do was set up the project on a VM. I decided to set up a vm for the project as my windows machine back at Polytech was creating a bunch of problems in regards to line ending etc that was preventing the site to run in some cases. So I decided to set it up in a linux machine. Trent and Liam help me set up the project at the start of the semester when i was new to everything, but this time I was able to set everything up by myself. While setting up the project I noticed that the wiki page for setting up the project was out of date. Alot of the stuff listed on the page wasnt needed anymore so I notified the team about it to get clarification on what wasnt needed.
+
+Learning linux was also a learning curve. I haven't had any real experience with linux before so learning all of the commands for installing packages etc was new to me.
+
+# Adding data
+
+This was also my first time adding data into the db through the manager file. Liam had provided me with pickle files for the frequency data. I did this by running the commands:
+```
+(in db-manager)
+pipenv shell
+python manager.py add /home/jamie/<directory> --data-type frequency
+```
+This was also my first time using pipenv shell so I had to research what it was and what it did.
+
+
+# Axios
+
+I worked with Trent to fix the user errors being swallowed by the redux saga. before I joined him I did some research into what Axios was and how it was being used in our project. The site I used as reference was https://medium.com/@MinimalGhost/what-is-axios-js-and-why-should-i-care-7eb72b111dc0
