@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "CSV Download"
+date:   2020-05-10 20:18:34 +1300
+categories: jekyll update
+---
+
+# npms
+
+In order to start on allowing the user to download data as csv I decided to install a npm package called react-csv. By using this package I could import a CSVLink component that when given data could export it to a csv file. I used the following code:
+
+```
+const headers = [
+    {label: 'Year', key: 'data.year},
+    {label: 'Rank', key: 'data.rank},
+    {label: 'Count', key: 'data.count},
+    {label: 'Frequency', key: 'data.freq},
+]
+```
+```
+<Box display="flex" justifyContent="flex-end" p={3}>
+    <CSVLink data={data.data} headers={headers} filename={`${data.title}-word-freq.csv`}>
+        Download as CSV
+    </CSVLink>
+</Box>
+```
+
+Which ended up alot easier compared to how I was previously attempting to do it manually.
+
+Since I had ended up installing a npm package I learnt that the details of the package were being stored in the package.json and package-lock.json files and that I needed to submit them with the pull request so that my teammates could run npm i -D to get the module and make the build reproducible.
+
+I just put a download button under each individual chart and plan to make this into a separate floating action button that downloads all data depending on Davids feedback during tomorrows meeting.
+
+# Deploying
+
+I got a chance to deploy the site onto the internal server (That David checks). So I got to learn how to putty into the kate server, into the ubuntu vm and deploy a the site using 
+```
+make start-prod-containers
+```
+which will run a production build of the site instead of the debug one we've been using to run the site on our local machines.
+
