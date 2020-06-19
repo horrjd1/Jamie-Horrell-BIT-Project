@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "Just even more stuff"
+date:   2020-06-14 21:43:51 +1300
+categories: jekyll update
+---
+
+# More stuff
+
+This week I was continued working on/helping with some issues. With the main focus being on providing feedback to the user if they query for something with no information and routing. My other classes assignments were fast approaching so i didn't get as much time to work on the project as I did other weeks
+
+# Routing
+
+I was mainly focused on figuring out how the navigation works on the site. I had never previously worked with React Router so I had too look into how it worked. 
+
+- Route - a component that renders something when its path matches the current url
+- Switch - renders the first child route that matches the current url
+- Link - Declares a navigable link around some part of an application
+- NavLink - Same as a Link but has options for applying some styling
+
+The project was set up with custom Routes
+- LoggedInRoute
+- LoggedOutRoute
+
+I figured out that they were declaring the routes and components on the root level app.js folder and were generating the Links from props in the navigation component. So I was able to convert these Links into NavLinks to apply an activeClassName to apply a style when the link is selected
+
+
+```
+isActive: {
+    color: theme.palette.primary.main,
+},
+```
+
+```
+<List>
+    {section.map(({ href, text }) => (
+        <NavLink to={href} className={classes.link} key={href + text} activeClassName={classes.isActive}>
+            <ListItem button key={text}>
+                <ListItemText primary={text} />
+            </ListItem>
+        </NavLink>
+    ))}
+</List>
+```
+
+# User Feedback Continue
+
+I continued my work on my assigned task of giving feedback to the user when their query didnt return any data and the reason why.
+
+```
+const useStyles = makeStyles({
+  alert: {
+    marginTop: 20,
+    width: '45vw',
+    minWidth: '400px',
+  },
+});
+
+let message
+
+function FeedbackBar({ errors }) {
+  const classes = useStyles();
+  switch (errors[0].message) {
+    case 'Not Found':
+      message = 'No data matching your words were found'
+      break;
+    default:
+      message = errors[0].message
+  }
+
+  return (
+    <Alert severity="warning" className={classes.alert}>{message}</Alert>
+  );
+}
+
+FeedbackBar.propTypes = {
+  errors: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default FeedbackBar;
+```
+
+As mentioned in the previous week there have been quite a few bugs with this feature. This was because the errors state doesn't get updated when certain actions are taking place. One of these bugs was that the errors weren't being reset when the user changed to different pages. So the error alert that I made would 'follow' the user. To solve this i looked into Reacts useEffect function.
+
+useEffect is used for performing 'side effects' on a component, specifically for after the DOM has loaded. It acts very similar to componentDidMount. This made it a good place to clear the errors (as they would be cleared when the new component(page) has been loaded).
+
+```
+  const setErrors = useStoreActions(state => state.timeline.setErrors);
+  useEffect(() => {
+    setErrors([])
+  }, [setErrors]);
+  const errors = useStoreState(state => state.timeline.errors);
+```
+
+# docker-compose stop/start
+
+Another part of the previous task was displaying feedback for if the site (for whatever reason) couldn't access the database. To emulate this on my VM I researched into how to detach the database volume from docker. I eventually found the start and stop commands that would remove a volume from the running container without deleting it.
+
+I could do this by running:
+- docker-compose stop nytmediaanalytics_db_1
+- docker-compose start nytmediaanalytics_db_1
+
+
+# New Server
+
+Our public site was discovered to be down on sunday the 7th of June. I was in contact with a member of the ops team shortly after where he explained to me that they thought the db that our site connected to had been given the same ip address as a sysadmin machine. I passed this information onto the rest of my team in our meeting that day.
+
+On Sunday the 14th we set up the new machine that Rob had provided us. I wasnt able to be present in the project room with Trent and Liam that night but I made sure to be on the call with them and learn about what they were doing.
