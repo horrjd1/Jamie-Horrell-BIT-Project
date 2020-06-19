@@ -12,7 +12,7 @@ At the start of the week our team held a scrum for Sprint 8. This meeting mainly
 <a href="images/email2.PNG">
 <img src="/images/2020-03-09-I1.jpg" alt="image" width="300"/>
  </a>
-![alt text](/images/2020-03-09-I1.jpg)
+![alt text](/Jamie-Horrell-BIT-Project/images/2020-03-09-I1.jpg)
 ![alt text](/images/2020-03-09-I2.jpg)
 ![alt text](/images/2020-03-09-I3.jpg)
 
