@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Postman"
+date:   2020-05-01 20:18:34 +1300
+categories: jekyll update
+---
+
+# Postman
+
+Trent and Liam taught me how to use postman, which is used for testing apis and getting their responses. So I tested that I could login through postman, get the bearer key to put in the header (so that the request knows its from me) and making requests to the frequency/latent association api to get a response. Screenshots: 
+
+![alt text](images/Postman2.PNG)
+
+![alt text](images/Postman3.PNG)
+
+![alt text](images/Postman1.PNG)
+
