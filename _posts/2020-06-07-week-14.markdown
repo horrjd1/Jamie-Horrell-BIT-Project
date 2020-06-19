@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Week 14"
+date:   2020-06-07 19:33:23 +1300
+categories: jekyll update
+---
+
+# More stuff
+
+This week I was mainly just helping fix issues for the site and making progress on adding some new features. One of these features was displaying a warning to the user when no data was found matching their parameters. To make this I was using my previously built up knowledge of states, components, props etc. However this is still under works as the way that errors are being handled are causing issues (errors arent being refreshed when actions are taking place such as resubmitting a form or changing pages etc). I figured out a way to reset them on when the form is submitted with the following:
+
+``` 
+// Actions and thunks
+  getAssociations: thunk(async (actions, payload) => {
+    actions.setErrors([]);
+    actions.setLoading(true);
+    try {
+      ...
+```
+
+But with the amount of checks and bugs this feature is showing it may take a while to get it working properly.
+
+# Thunk
+
+When I was checking through the site structure to find the places id need to make changes to to fix the previously mentioned bugs I came across this function and was confused on what it does so I had a look into it. A thunk is used to dispatch actions to modify state (aswell as other actions like modifying the db and making api requests) in complex workflows (if/elses). It basically allows you to do/make more than one thing in one call.
+
+# Easy-peasy
+
+One of my teams mates was working on replacing redux and sagas that are currently in the site with Easy-Peasy as redux isnt very friendly to new members and people who will be joining the project in the future (I was effected by this hurdle). So I made sure to learn what easy peasy did and how it would replace the old sagas. Easy Peasy works in the same way the redux works (defining a 'store' which is a place to store all the information and actions. Then wrapping the project/app with this 'store' so that its information and actions can be used from within the app.) except there is much less boiler plate that you have to write to work with it. 
+
+
+# Back end
+
+Since I hadnt had many opportunities to go over the back end of the site my team had recommended that I have a look into the stretch goal of flattening the api data. This involved restructuring the api to just return an array of objects instead of the title, data and years structure that was currently there.
+
+
+I also added a csv download option to the sentiment page.
