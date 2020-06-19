@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Third Week"
+title:  "Week 3"
 date:   2020-03-07 19:32:51 +1300
 categories: jekyll update
 ---

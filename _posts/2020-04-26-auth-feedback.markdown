@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Login/Sign-up Feedback"
+title:  "Auth Feedback"
 date:  2020-04-26 21:43:54 +1300
 categories: jekyll update
 ---
