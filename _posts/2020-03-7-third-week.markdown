@@ -15,6 +15,6 @@ It was also at this point that I was taught more about how they tested their pro
 
 This did result in a error with the graphs that i tried to research and fix by myself
 
-On the second lesson Trent and Liam got me to write a test for the user authentication they had just finished. Which was great as, though im unable to write code to for a authentication system for the site at this stage, it allowed me to go through what they've done and understand it. This also got me to use a new tool called Postman that allowed me to test the get and post routes for the login. I ended up finding some problem with the minimum name length and the naming of the 'val' attribute when checking against their Code Review Checklist.
+On the second lesson Trent and Liam got me to write a test for the user authentication they had just finished. Which was great as, though im unable to write code to for a authentication system for the site at this stage, it allowed me to go through what they've done and understand it. This also got me to use a new tool called Postman that allowed me to test the get and post routes for the login. I ended up finding some problems with the minimum name length and the naming of the 'val' attribute when checking against their Code Review Checklist.
 
 ![alt text](images/2020-03-05-postman.jpg)

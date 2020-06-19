@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Week 13"
+date:   2020-05-31 21:01:41 +1300
+categories: jekyll update
+---
+
+# Prop Types
+
+It had been a while since I had done the react tutorial back at the start of the semester so I ahd to do a refresher with how proptypes work so that I could implement them into the csv download button component that I made. This is to make sure that the correct types of data 
+
+```
+class CsvDownloadButton extends React.Component {
+  render() {
+    const { classes } = this.props
+    return (
+      <TooltipUI title="Download as csv" placement="right" arrow>
+        <Fab color="secondary" aria-label="download" className={classes.fab}>
+          <CSVLink data={this.props.data} headers={this.props.headers} filename={this.props.filename}>
+            <GetAppIcon fontSize="large" className={classes.icon}/>
+          </CSVLink>
+        </Fab>
+      </TooltipUI>
+    );
+  }
+}
+```
+
+```
+CsvDownloadButton.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  headers: PropTypes.arrayOf((PropTypes.object)).isRequired,
+  filename: PropTypes.string.isRequired,
+};
+```
+
+# Questions
+
+Since it was coming close to the end of the semester I had prepared a list of questions covering some of the things that I havent touched this semester in regards to the project. I thought that it would be important to have an understanding of these things before Trent and Liam left the project. Some of my questions included:
+- How did you set up Travis ci to run on pull requests and how is that managed?
+- Where did you set up the issue templates
+- What are the storybook folders used for and how do they work
+- how were the docs generated
+
+etc
