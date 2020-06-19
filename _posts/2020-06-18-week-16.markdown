@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Final Week"
+date:   2020-06-18 21:21:25 +1300
+categories: jekyll update
+---
+
+# Final Week
+
+This week (monday to Friday) I keeping up with my team on the progress of the deployment. I didn't have much time to work on project this week at all because of my other assignments so I couldn't really help much. 
+
+# Google Cloud Platform
+
+Because of the email verification that has been made on the site each developer has to set up OAuth on a gmail account and add the key, secret, token 
+
+The tutorial I followed: https://youtu.be/Jjb_laHlkZQ
+
+The tutorial however didn't cover the creation of of the consent screen so I had too look into how I should make one before starting the tutorial.
+
+Here are some screenshots of the process
+
+![alt text](images/Screenshot_Google-Cloud-Platform.png)
+![alt text](images/Screenshot_OAuth-2-Playground_1.png)
+![alt text](images/Screenshot_OAuth-2-Playground_2.png)
+
+# Documentation
+
+I had a little bit of time to to update a couple of the pages on the projects wiki. Two of the pages I updated were:
+
+https://github.com/op-analytics/NYT-Media-Analytics/wiki/Issues
+https://github.com/op-analytics/NYT-Media-Analytics/wiki/Folder-Structure
+
+Our team hadnt got much time to update our documentation because of the final push to get the site live. So we have made arrangements to do the rest of the documentation next Saturday.
