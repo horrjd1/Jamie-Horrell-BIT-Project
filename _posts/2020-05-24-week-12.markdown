@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "Week 12"
+date:   2020-05-24 19:57:26 +1300
+categories: jekyll update
+---
+
+# Other Focuses
+
+I had alot of stuff going on this week so I didnt have much time to work on project as I wanted.
+
+# More Downloading
+
+Now that the latent association association was back into the site, I could make the csv download function with the latent association. I did this in a similar way to the frequency.
+```
+const getDownloadData = (currentData, concept1, concept2) => {
+  const dataToDownload = [];
+  console.log(currentData)
+  if(currentData) {
+    currentData.forEach(item => {
+      console.log(item)
+      console.log(item["yearRange"])
+      dataToDownload.push({
+        mediaOutlet: mediaOutlets.find(obj => obj.value === item["media_outlet"]).name,
+        concept1: concept1,
+        concept2: concept2,
+        yearRange: item["yearRange"],
+        association: item["association"],
+      });
+    });
+  }
+  return dataToDownload;
+};
+```
+```
+  const dataToDownload = useMemo(() => getDownloadData(associations,concept1,concept2), [
+    associations,
+    concept1,
+    concept2,
+  ]);
+```
+I also made it so that the button isnt shown when there is no data on the page or if he user is currently editing the form:
+```
+formSubmitted && dataToDownload.length && !loading ? (
+    <CsvDownloadButton
+        data={dataToDownload}
+        headers={csvHeaders}
+        filename="ma-word-frequency.csv"
+    />
+) : (
+    null
+)}
+```
