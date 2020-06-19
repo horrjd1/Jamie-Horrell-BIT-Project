@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "CSV Rework"
+date:   2020-05-09 21:17:41 +1300
+categories: jekyll update
+---
+
+# CSV Rework
+
+This week I made a big rework to how the csv download button works. I did the following
+- Moved download button into its own component
+- Made a function that formatted the apis response into an array that the CSVLink module will accept
+- Styled the component into an attractive looking floating action button that sits in a fixed position on the bottom right of the page.
+
+heres the function I used to convert the data into a suitable array:
+```
+const getDownloadData = (currentData, key, yearFrom, yearTo) => {
+  const dataToDownload = [];
+  currentData.forEach(({ data, word }) => {
+    Object.entries(data).forEach(([mediaOutlet, values]) =>
+      values.forEach(item => {
+        const year = item['year'];
+        if (year <= yearTo && year >= yearFrom)
+          dataToDownload.push({
+            year,
+            value: item[key],
+            mediaOutlet: mediaOutlets.find(obj => obj.value === mediaOutlet)
+              .name,
+            word,
+          });
+      }),
+    );
+  });
+  return dataToDownload;
+};
+```
+All code for the component and logic at the time can be found here:
+https://github.com/op-analytics/NYT-Media-Analytics/pull/302/commits/c764daf5b4055c5d3f3199382ea5ebd6856ceee3
+
+# API version control
+
+During one of our meeting we discussed version controlling the api. Since the way the api works could change in the future we thought itd be good to make a second api so that the components that relied on the current api and dont need the new apis features wouldn't have to be modified. We also decided to do this because one of the features I was making depended on a larger feature that another team member was working on and was in a constantly changing state.
+
+# Styling
+
+I also did my own research into how styling works in reactjs for my csv download component, since it doesn't use any css and instead uses makeStyles. Ive seen the useStyles block be used at the top some other files while working on the project but hadnt really had a a chance to make one or apply it to my own component before.
+
+# Docker volumes
+
+During this week our project was having a problem with the docker volumes. Because of the way that it cached data it couldnt find modules that were installed with npm even though they were in the project. I questioned my team about why this was happening and how to fix it.
+
+To fix this issue I had to do the following
+```
+docker volume ls //lists all the volumes
+docker volume rm 387ds87sv... // remove the specified volume
+```
+I had to remove all volumes except for the nytmediaanylitics_db_1 which contained the database that I had inserted the data from the pickle files into.
