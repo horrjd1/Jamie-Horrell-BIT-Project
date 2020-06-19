@@ -27,7 +27,7 @@ Here are some screenshots of the process
 
 I had a little bit of time to to update a couple of the pages on the projects wiki. Two of the pages I updated were:
 
-https://github.com/op-analytics/NYT-Media-Analytics/wiki/Issues
-https://github.com/op-analytics/NYT-Media-Analytics/wiki/Folder-Structure
+<https://github.com/op-analytics/NYT-Media-Analytics/wiki/Issues>
+<https://github.com/op-analytics/NYT-Media-Analytics/wiki/Folder-Structure>
 
 Our team hadnt got much time to update our documentation because of the final push to get the site live. So we have made arrangements to do the rest of the documentation next Saturday.

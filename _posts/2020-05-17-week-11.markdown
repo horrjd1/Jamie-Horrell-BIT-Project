@@ -35,7 +35,7 @@ const getDownloadData = (currentData, key, yearFrom, yearTo) => {
 };
 ```
 All code for the component and logic at the time can be found here:
-https://github.com/op-analytics/NYT-Media-Analytics/pull/302/commits/c764daf5b4055c5d3f3199382ea5ebd6856ceee3
+<https://github.com/op-analytics/NYT-Media-Analytics/pull/302/commits/c764daf5b4055c5d3f3199382ea5ebd6856ceee3>
 
 # API version control
 

@@ -51,7 +51,7 @@ I was also still getting used to ES6s => syntax. This also gave me an opportunit
     });
 ```
 
-The other can be found here although they are very similar to that one: https://github.com/op-analytics/NYT-Media-Analytics/pull/235/files
+The other can be found here although they are very similar to that one: <https://github.com/op-analytics/NYT-Media-Analytics/pull/235/files>
 
 
 # Login/Logout Button

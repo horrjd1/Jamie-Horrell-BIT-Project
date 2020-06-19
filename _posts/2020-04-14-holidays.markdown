@@ -24,6 +24,6 @@ This was also my first time using pipenv shell so I had to research what it was 
 
 # Axios
 
-I worked with Trent to fix the user errors being swallowed by the redux saga. before I joined him I did some research into what Axios was and how it was being used in our project. The site I used as reference was https://medium.com/@MinimalGhost/what-is-axios-js-and-why-should-i-care-7eb72b111dc0
+I worked with Trent to fix the user errors being swallowed by the redux saga. before I joined him I did some research into what Axios was and how it was being used in our project. The site I used as reference was <https://medium.com/@MinimalGhost/what-is-axios-js-and-why-should-i-care-7eb72b111dc0>
 
-The changes we made can be found here:https://github.com/op-analytics/NYT-Media-Analytics/pull/249
+The changes we made can be found here: <https://github.com/op-analytics/NYT-Media-Analytics/pull/249>

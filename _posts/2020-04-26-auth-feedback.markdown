@@ -63,4 +63,4 @@ function getErrorsFromResponse(response) {
 }
 ```
 A full list changes can be found in this pull request: 
-https://github.com/op-analytics/NYT-Media-Analytics/pull/268
+<https://github.com/op-analytics/NYT-Media-Analytics/pull/268>
