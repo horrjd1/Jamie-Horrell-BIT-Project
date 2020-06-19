@@ -19,9 +19,9 @@ The tutorial however didn't cover the creation of of the consent screen so I had
 
 Here are some screenshots of the process
 
-![alt text](images/Screenshot_Google-Cloud-Platform.png)
-![alt text](images/Screenshot_OAuth-2-Playground_1.png)
-![alt text](images/Screenshot_OAuth-2-Playground_2.png)
+![alt text](/Jamie-Horrell-BIT-Project/images/Screenshot_Google-Cloud-Platform.png)
+![alt text](/Jamie-Horrell-BIT-Project/images/Screenshot_OAuth-2-Playground_1.png)
+![alt text](/Jamie-Horrell-BIT-Project/images/Screenshot_OAuth-2-Playground_2.png)
 
 # Documentation
 

@@ -9,12 +9,9 @@ categories: jekyll update
 
 At the start of the week our team held a scrum for Sprint 8. This meeting mainly focused on brainstorming a revised file structure for the site as it was becoming quite convoluted and repetitive. We also thought that a new structure may be easier to grasp for new students coming into the project in future semesters aswell as myself to work on. We also decided on a rough structure for the database. Pictures from the brainstorm are below. We also decided that we would use this sprint to add more data sources as per the clients request and add some options to the graphs (filtering).
 
-<a href="images/email2.PNG">
-<img src="/images/2020-03-09-I1.jpg" alt="image" width="300"/>
- </a>
 ![alt text](/Jamie-Horrell-BIT-Project/images/2020-03-09-I1.jpg)
-![alt text](/images/2020-03-09-I2.jpg)
-![alt text](/images/2020-03-09-I3.jpg)
+![alt text](/Jamie-Horrell-BIT-Project/images/2020-03-09-I2.jpg)
+![alt text](/Jamie-Horrell-BIT-Project/images/2020-03-09-I3.jpg)
 
 # Site Restructure
 
