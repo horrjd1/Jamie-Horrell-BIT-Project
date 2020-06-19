@@ -13,7 +13,7 @@ This week (monday to Friday) I keeping up with my team on the progress of the de
 
 Because of the email verification that has been made on the site each developer has to set up OAuth on a gmail account and add the key, secret, token 
 
-The tutorial I followed: https://youtu.be/Jjb_laHlkZQ
+The tutorial I followed: <https://youtu.be/Jjb_laHlkZQ>
 
 The tutorial however didn't cover the creation of of the consent screen so I had too look into how I should make one before starting the tutorial.
 
