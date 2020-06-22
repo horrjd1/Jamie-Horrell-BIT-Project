@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "documentation"
+title:  "Documentation"
 date:   2020-06-22 19:53:46 +1300
 categories: jekyll update
 ---
