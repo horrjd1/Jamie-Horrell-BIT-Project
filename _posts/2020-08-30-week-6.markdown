@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Week 5"
-date:   2020-08-23 19:34:48 +1300
+title:  "Week 6"
+date:   2020-08-30 19:34:48 +1300
 categories: jekyll update
 ---
 
