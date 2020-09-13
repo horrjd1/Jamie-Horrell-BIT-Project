@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Week 5"
+date:   2020-08-23 19:34:48 +1300
+categories: jekyll update
+---
+
+# CRUD
+
+to test the database
+setting up crud with scaffolding
+made crud to test adding getting updateing etc
+
+
+# Components presets
+
+I was also looking for css templates and react component templates for us to use in our site as this would save us alot of development time. I didnt manage to find any css 
+
+I managed to find a template called Tabler https://tabler-react.com/ which have components that look very similar to those used in zeros admin dashboard

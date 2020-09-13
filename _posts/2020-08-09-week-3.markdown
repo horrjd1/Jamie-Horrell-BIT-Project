@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Week 3"
+date:   2020-08-09 20:45:17 +1300
+categories: jekyll update
+---
+
+# Testing the API
+
+we followed this tutorial where we used POSTMAN to log into our 'companys' Xero account using access tokens.
+
+https://developer.xero.com/documentation/tools/postman
+
+Here are some screenshots of the process:
+![alt text](/Jamie-Horrell-BIT-Project/images/S2/w3-postman-1.PNG)
+![alt text](/Jamie-Horrell-BIT-Project/images/S2/w3-postman-2.PNG)
+![alt text](/Jamie-Horrell-BIT-Project/images/S2/w3-postman-3.PNG)
+
+
+# Gulp
+
+We had previously wanted to use material UI in our site ____. however this required us to have node modules installed. 
+Since asp.net doesnt have the same folder structure and features of an asp.net project, we needed a way to make the node_module 
+accessable. In order to do this we learnt gulp in order to make a script to copy the node_modules into the wwwroot folder.
+
+```javascript
+var gulp = require("gulp");
+
+function copy_node_modules(cb) {
+    return gulp
+        .src("node_modules/**")
+        .pipe(gulp.dest('wwwroot/node_modules'));
+
+    cb();
+}
+
+exports.copy_node_modules = copy_node_modules;
+exports.default = copy_node_modules;
+```
+
+However after doing some research into doing this we discovered that copying all the node modules into a public folder could be a security risk, and that 
+if we were to continue to add node modules we would have to continously modify this script. So we decided to move to a different ui framework. So even though we arent using it currently in the project, we still learnt gulp.

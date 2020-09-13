@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "Week 5"
+date:   2020-08-23 19:34:48 +1300
+categories: jekyll update
+---
+
+# npm and webpack
+
+I knew that ASP.NET uses wwwroot to store its public files and that anything outside of it could not be used by the live front end. This would mean that I have to put the node mudules directory in this folder. However i know that this is bad practive to make all node modules public, so I had to come up with a solution.
+
+To solve this I decided to make a new directory in the project called 'Client'. This would be where node modules and all other js/css/images etc that are normally located in wwwroot will be held. In this new directory I set up a webpack config that would gather all the used assets from Client and process them into wwwroot/dist. Here is the webpack config file I wrote to get everything working, (we were now using tabler which required some extra file types to be packaged).
+```
+const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+    // May have to add the js files for each page?
+    entry: {
+        site: './src/js/site.js',
+        validation: './src/js/validation.js',
+        index: './src/js/index.js'
+     },
+    output: {
+        filename: '[name].entry.js',
+            path: path.resolve(__dirname, '..', 'wwwroot', 'dist')
+    },
+    devtool: 'source-map',
+    mode: 'development',
+    module: {
+        rules: [
+            { test: /\.(js)$/,  exclude: /node_modules/, loader: 'babel-loader'},
+            { test: /\.css$/, use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader"] },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+            { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
+        })
+    ]
+ };
+ ```
+
+I made sure to leave a full explanation to all the changes and how the project will work from now on in my pull request to inform my team mate. Here is a link to that: https://github.com/Marrnj2/XeroWebProject/pull/21
+
+As mentioned in that pull req I also converted our current jsx files to js and added some new npm commands to run webpack and build the site.
+ 

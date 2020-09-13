@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Week 5"
+date:   2020-08-23 19:34:48 +1300
+categories: jekyll update
+---
+
+# Database Connection
+
+A challenge I came across this week was connecting the database I had created last week with our asp.net project. This was because we werent able to create ADO.NET files like tutorials expected, or create the database within the project. This was because ______. Because of this I had to write a connection string to connect our database

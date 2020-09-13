@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Week 5"
+date:   2020-08-23 19:34:48 +1300
+categories: jekyll update
+---
+
+# Material UI Styles
+
+Most of our styling for our site would be managed by Tabler and possibly material UI, but we may have to apply some custom styling to each component to get a theme or alignment going. I had worked with material UI styles in my previous project and knew that this would help us in our development by taking away the need to deal with classes and an ever increasing style sheet. So I taught my team mate how what material ui styles were and how to use them, I did this by making an example makeStyles() infront of him.
+
+Link to pull req: https://github.com/Marrnj2/XeroWebProject/pull/22
+
+# Auth
+
+Users need the ability to create an account and login to our site. We found a asp net ____ called identity
+
+adding this into the project from scratch wasnt working, 
+
+made new project and copied over stuff from that to our project.

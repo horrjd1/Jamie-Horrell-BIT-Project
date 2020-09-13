@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Week 4"
+date:   2020-08-16 19:34:48 +1300
+categories: jekyll update
+---
+
+# Authentication
+
+Both Me and Nic were working together on integrating Xeros OAuth2 samples into out MVC Project.
+
+https://github.com/XeroAPI/xero-netstandard-oauth2-samples
+
+# Database
+
+At the end of the week while Nic was fixing an issue with the OAuth in our project I started work on setting up a database. I created a SQL Server Database Project that would run alongside our Xero application. At this point we were still unsure of what the database was going to be used for, so I created dummy sql files that would create some small tables on students, courses and enrolments as well as a Script.PostDeployment1.sql script that would populate the tables. These should come in handy when we need to use the database as they would be a good reference point.
