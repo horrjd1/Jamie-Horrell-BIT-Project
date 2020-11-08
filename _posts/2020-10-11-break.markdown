@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "Break"
+date:   2020-10-11 19:34:48 +1300
+categories: jekyll update
+---
+
+# Break Plan
+
+Both me and my team member prepared a 'meeting' to discuss how we would work over the break. We broke up the work evenly and based off of when each of us would be able to work on the site. We decided that i was going make a demo dashboard and potentially other pages for the site while waiting for Nic to finish the loginless (no action required by end user) Xero connection. once that was finished we could then integrate the api into each of the already made components.
+
+# Communication
+
+# Project Restructure
+
+There were a number of problems that we were facing in our development
+- Site wasnt live updating
+- Modules we had created to load react modules onto a cshtml file werent always working and were loading for the incorrect pages, this was also creating more work when making a page
+- I was having trouble converting the cshtml identity login partial into a react component
+
+After weighing up these options we decided that we would create a new project this time from the react template that would fix the all the previously mentioned issues and move all our current content over to that new template. This was a very quick solution as most of the work was just moving some files across.
+
+Once I had completed the transfer I made sure to teach my teammate the changes such as the renaming of the Client directory and how there were no more cshtml files for each page.
+
+If anything this experience has taught me to go more indepth into my options when starting something as it is a pain knowing that I spent alot of time trying to set up npm and webpack into the project when a template could have done it instantly, but i refused because i didnt want to technically remake the project as its bad practice and wont be possible in the future when the codebase is bigger.
+
+So I made sure go more indepth into my options when working on the dashboard later on in the break.
+
+# Grid
+
+I wanted to make sure that the dashboard that i was making this week was reponsive and formatted nicely onto whatever screen size was being used. In order to acheive this with the paper cards I had made to hold the charts I decided to use the material ui grid component and add breakpoints for different screen sizes. This meant that if the screens width was small enough the cards would form a single vertical column. 
+
+```html
+      <div className="component-grid">
+        <Grid container spacing={3}>
+          <Grid item sm={12} md={6}>
+            <BusinessBankAccount/>
+          </Grid>
+          <Grid item sm={12} md={6}>
+            <BusinessSavingsAccount/>
+          </Grid>
+        ...
+```
+
+# Charting Libraries
+
+I made sure to look over and test multiple react charting libraries to see which would provide the most useful features for our site. I tested:
+
+- recharts
+- DevExtreme Charts
+- react-chartjs-2
+
+## recharts
+
+I chose recharts because of its customizability, extensive documentation and how lightweight it is. The documentation provided examples that could very easily be modified to incorperate our api.
+
+Examples of code i used to make the charts that loaded external data:
+
+```html
+//
+<ResponsiveContainer>
+    <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5, right: 30, left: 20, bottom: 5,
+        }}
+    >
+        <XAxis dataKey="name" />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="in" fill="#68A3DE" />
+        <Bar dataKey="out" fill="LightGray" />
+    </BarChart>
+</ResponsiveContainer>
+
+<ResponsiveContainer>
+    <AreaChart
+        data={data}
+        margin={{
+            top: 10,
+            right: 0,
+            left: 0,
+            bottom: 0,
+        }}
+    >
+        <XAxis dataKey="name" />
+        <Tooltip />
+        <Area
+            type="monotone"
+            dataKey="Balance"
+            fill="#0466c8"
+        />
+    </AreaChart>
+</ResponsiveContainer>
+```
+
+# Material-ui data grid
+
+In order to make the table that will list the employees 
+
+# Git maintanence
+
+probably doesnt need to be stated at this point but i am remainning to keep the git repo well maintained.
+
+keep issues up to date, closing issues that werent relavent anymore or were already finished, and adding new issues covering things that werent added in pull reqs or that i noticed while working on the site, such as:
+
+https://github.com/Marrnj2/XeroWebProject/issues/55
+https://github.com/Marrnj2/XeroWebProject/issues/54
+
+I continue to make pull requests as informative as I can, for example:
+https://github.com/Marrnj2/XeroWebProject/pull/56
