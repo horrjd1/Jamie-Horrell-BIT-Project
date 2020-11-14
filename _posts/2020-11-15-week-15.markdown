@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Week 15 (Internship)"
+date:   2020-11-15 19:34:48 +1300
+categories: jekyll update
+---
+
+## Doing What I Can
+
+So since I am currently working at my internship I dont have much time to work on Project. however because we had planned out a good amount of work for me do over the last week I was able to get my issues almost all complete. These involved:
+- Finishing up the invoices page
+- Making some quick components for the dashboard
+- Prefilling the update employee dialog with the correct information
+- Adding a link out of the registration page to the login page
+
+There was one issue that I found with the dashboard. The dashboard was attempting to make an API call before the login redirect commenced. Since the login hadnt been completed by the user the OAuth call couldnt be completed and therefor created an error. This meant that launching the project would immediatly error when launched. To solve this problem I seperated the home page (/) and the dashboard (/dashboard) and redirected to the dashboard after a login. This would also mean that if the project were to continue then it would be possible to make a homepage for before the user logs in, instead dof immediatly redirecting them to the login page.
+
