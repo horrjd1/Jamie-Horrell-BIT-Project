@@ -7,10 +7,12 @@ categories: jekyll update
 
 # Authentication
 
-Both Me and Nic were working together on integrating Xeros OAuth2 samples into out MVC Project.
+Both Nic and I were working together on integrating Xeros OAuth2 samples into our MVC Project. Xero has a repo in which the have many sample applications for various versions of .NET projects. 
 
 https://github.com/XeroAPI/xero-netstandard-oauth2-samples
 
+We read about how the XeroOAuth2Sample-MVC-PKCE sample worked and tried to implement its features into our site. This would be a good starting point as it would give our site a button that we could use to login to Xero. We could then hopefully make this process automated later on.
+
 # Database
 
-At the end of the week while Nic was fixing an issue with the OAuth in our project I started work on setting up a database. I created a SQL Server Database Project that would run alongside our Xero application. At this point we were still unsure of what the database was going to be used for, so I created dummy sql files that would create some small tables on students, courses and enrolments as well as a Script.PostDeployment1.sql script that would populate the tables. These should come in handy when we need to use the database as they would be a good reference point.
+At the end of the week while Nic was fixing an issue with the OAuth process in our project I started work on setting up a database. I created a SQL Server Database Project using Visual Studio that would run alongside our Xero application. At this point, we were still unsure of what the database was going to be used for since the auth was going to be handled by Xero and I didn't look like we would need to store any other information permanently for the site, so I created dummy SQL files that would create some small tables on students, courses, and enrolments. On top of this, I created the file Script.PostDeployment1.sql that would populate the tables. These should come in handy later to use as a reference when we need to use the database.
