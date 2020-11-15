@@ -7,4 +7,37 @@ categories: jekyll update
 
 # Database Connection
 
-A challenge I came across this week was connecting the database I had created last week with our asp.net project. This was because we werent able to create ADO.NET files like tutorials expected, or create the database within the project. This was because ______. Because of this I had to write a connection string to connect our database
+A challenge I came across this week was connecting the SQL Server project I had created last week with our ASP.NET project. Most tutorials I could find about how to do this expected the project to able to create and use ADO.NET files (ADO.NET is a framework designed to interact with data sources, like databases and XML files). However, our project was unable to create or use any of these types of files. I suspect that this is because the project was created as a .NET standard project instead of a .NET framework. as the correct tools in Visual Studio were installed and Entity Framework as installed via NuGet.
+
+Since this wasn't an option I had to approach connecting to the database manually. To do this I created a connection string in the appsettings.json file:
+
+```json
+"ConnectionStrings": {	 
+"DatabaseContext": "Server=(localdb)\\ProjectsV13;Initial Catalog=NJXDatabase;Integrated Security=True;Trusted_Connection=True;"	 
+ },
+```
+
+I could then set up a DataBaseContext Class that gets used in the Startup.cs file that will connect to the database:
+
+```C#
+namespace NJXManagement.Data
+{
+    public class DatabaseContext : DbContext
+    {
+        public DatabaseContext(
+            DbContextOptions<DatabaseContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Student> Student { get; set; }
+    }
+}
+
+```
+
+
+```C#
+services.AddDbContext<DatabaseContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("databaseContext")));
+```
