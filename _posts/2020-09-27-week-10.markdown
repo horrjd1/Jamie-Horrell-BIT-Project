@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Week 10"
+date:   2020-09-27 19:34:48 +1300
+categories: jekyll update
+---
+
+# Workload
+
+I had a lot going on outside of Polytech this week (Mainly making my CV, cover letters, and attending a job interview) so I didn't have much time to work on a project outside of polytech.
+
+# Material UI
+
+One of the things I did was decide on what UI framework would be replacing Tabler in our project. I had decided to replace tabler with another UI framework as it was filling our wwwroot directory with hundreds of svgs of flags and logos, and because the documentation for it (at least at the time of writing this) wasn't very useful. After weighing up my options I decided on using material UI as I had experience with it last semester and because it is extremely flexible and customizable.
+
+# Dashboard Start
+
+After deciding on Material UI I could start on making a dashboard template. To make this similar to an admin dashboard I used a material UI drawer for a side menu. For the time it just leads to empty pages.
