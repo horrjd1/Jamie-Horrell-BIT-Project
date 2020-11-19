@@ -7,30 +7,30 @@ categories: jekyll update
 
 # Break Plan
 
-Both me and my team member prepared a 'meeting' to discuss how we would work over the break. We broke up the work evenly and based off of when each of us would be able to work on the site. We decided that i was going make a demo dashboard and potentially other pages for the site while waiting for Nic to finish the loginless (no action required by end user) Xero connection. once that was finished we could then integrate the api into each of the already made components.
+Both I and my team member prepared a 'meeting' to discuss how we would work over the break. We broke up the work evenly and based on when each of us would be able to work on the site. We decided that I was going to make a demo dashboard and potentially other pages for the site while waiting for Nic to finish the login less (no action required by the end-user) Xero connection. once that was finished we could then integrate the API into each of the already made components.
 
 # Communication
 
-We made sure to communicate on teams regularly to keep up to date on what each other were doing, having a voice meeting when ther ewas more to discuss. Heres some evidence of that:
+We made sure to communicate on teams regularly to keep up to date on what each other were doing, having a voice meeting when there was more to discuss. Here's some evidence of that:
 
 ![communication](/Jamie-Horrell-BIT-Project/images/S2/break-communication.PNG)
 
 # Project Restructure
 
-There were a number of problems that we were facing in our development
-- Site wasnt live updating
-- Modules we had created to load react modules onto a cshtml file werent always working and were loading for the incorrect pages, this was also creating more work when making a page
+There were several problems that we were facing in our development
+- Site wasn't live updating
+- Modules we had created to load react modules onto a cshtml file weren't always working and were loading for the incorrect pages, this was also creating more work when making a page
 - I was having trouble converting the cshtml identity login partial into a react component
 
-After weighing up these options we decided that we would create a new project this time from the react template that would fix the all the previously mentioned issues and move all our current content over to that new template. This was a very quick solution as most of the work was just moving some files across.
+After weighing up these options we decided that we would create a new project this time from the react template that would fix all the previously mentioned issues and move all our current content over to that new template. This was a very quick solution as most of the work was just moving some files across.
 
 Once I had completed the transfer I made sure to teach my teammate the changes such as the renaming of the Client directory and how there were no more cshtml files for each page.
 
-If anything this experience has taught me to go more indepth into my options when starting something as it is a pain knowing that I spent alot of time trying to set up npm and webpack into the project when a template could have done it instantly, but I refused because I didnt want to remake the project as its bad practice and wont be possible in the future when the codebase is bigger.
+If anything this experience has taught me to go more in-depth into my options when starting something as it is a pain knowing that I spent a lot of time trying to set up npm and webpack into the project when a template could have done it instantly, but I refused because I didn't want to remake the project as its bad practice and wouldn't be possible in the future when the codebase is bigger.
 
 # Grid
 
-I wanted to make sure that the dashboard that i was making this week was reponsive and formatted nicely onto whatever screen size was being used. In order to acheive this with the paper cards I had made to hold the charts I decided to use the material ui grid component and add breakpoints for different screen sizes. This meant that if the screens width was small enough the cards would form a single vertical column. 
+I wanted to make sure that the dashboard that I was making this week was responsive and formatted nicely onto whatever screen size was being used. In order to achieve this with the paper cards I had made to hold the charts, I decided to use the material UI grid component and add breakpoints for different screen sizes. This meant that if the screen's width was small enough the cards would form a single vertical column. 
 
 ```html
       <div className="component-grid">
@@ -54,9 +54,9 @@ I made sure to look over and test multiple react charting libraries to see which
 
 ## recharts
 
-I chose recharts because of its customizability, extensive documentation and how lightweight it is. The documentation provided examples that could very easily be modified to incorperate our api.
+I chose recharts because of its customizability, extensive documentation, and how lightweight it is. The documentation provided examples that could very easily be modified to incorporate our API.
 
-Examples of code i used to make the charts that loaded external data:
+Examples of code I used to make the charts that loaded external data:
 
 ```html
 //
@@ -98,11 +98,16 @@ Examples of code i used to make the charts that loaded external data:
 </ResponsiveContainer>
 ```
 
-# Git maintanence
+Here is what the dashboard currently looks like:
 
-Probably doesnt need to be stated at this point but i am remainning to keep the git repo well maintained.
+![dashboard](/Jamie-Horrell-BIT-Project/images/S2/break-dashboard.png)
 
-Keeping issues up to date, closing issues that werent relavent anymore or were already finished, and adding new issues covering things that werent added in pull reqs or that I noticed while working on the site, such as:
+
+# Git Maintenance
+
+Probably doesn't need to be stated at this point but I am remaining to keep the git repo well maintained.
+
+Keeping issues up to date, closing issues that weren't relevant anymore or were already finished, and adding new issues covering things that weren't added in pull requestss or that I noticed while working on the site, such as:
 
 - [https://github.com/Marrnj2/XeroWebProject/issues/55](https://github.com/Marrnj2/XeroWebProject/issues/55)
 - [https://github.com/Marrnj2/XeroWebProject/issues/54](https://github.com/Marrnj2/XeroWebProject/issues/54)
