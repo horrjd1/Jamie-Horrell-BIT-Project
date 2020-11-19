@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "Week 11"
+date:   2020-10-18 19:34:48 +1300
+categories: jekyll update
+---
+
+# Router DOM
+
+While waiting for my teammate to finish the APi connection I started work on fixing the current issues present in the site. The first issue i tackled was the long loading times when switching between pages.
+
+To solve this problem I decide that I could use react router dom which I had seen in my previous project but never directly worked with. So I stated with reading the documentation to figure out how it worked and if it could be used in our project to solve our problem. React Router worked by declaring our routes in the App.js file using the Route component which could be linked up to the inbuilt authorization routes that were already in the project. The App.js file ended up as the following:
+
+```javascript
+export default class App extends Component {
+  static displayName = App.name;
+
+  render () {
+    return (
+      <Layout>
+        <AuthorizeRoute exact path='/' component={Home} />
+        <AuthorizeRoute exact path='/dashboard' component={Dashboard} />
+        <AuthorizeRoute path='/employees' component={Employees} />
+        <AuthorizeRoute path='/invoices' component={Invoices} />
+        <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
+      </Layout>
+    );
+  }
+}
+```
+
+I could then change the links throughout the react front end to use react router which would speed up the loading times dramatically. So for example the drawer links change from this:
+
+```javascript
+<a className={classes.a} href="/employees">
+    <ListItem button key={"Employees"}>
+        <ListItemIcon>
+            <PersonIcon />
+        </ListItemIcon>
+        <ListItemText primary={"Employees"} />
+    </ListItem>
+</a>
+```
+
+to this:
+
+```javascript
+    <NavItem>
+        <NavLink tag={Link} className="text-dark" to="/employees">
+            <ListItem button key={"Employees"}>
+                <ListItemIcon>
+                    <PersonIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Employees"} />
+            </ListItem>
+        </NavLink>
+    </NavItem>
+```
+
+# styling 
+
+The second issue I started to tackle was the default identity pages that were currently being used on our site. The styling of these pages didnt match the style of our dashboard and included text that was only intended to be seen by the developers and not the end user.
+
+In order to edit these pages I would have to generate the Area folder and the cshtml files as it was currently grabbing the default Identity pages from the nuget package. To do this I used Visual Studios scaffolding feature to generate the Identity pages I needed. 
+
+I also knew that this would recreate the wwwroot and Pages folders which arent needed for the the rest of the application. So I made sure that these would be documented correctly as to not confuse my teammate and future teammates if this project happens to continue once I leave.
+
+(I had originally tried to generate them in the command line using the CodeGeneration NuGet package and running the command:
+
+```
+dotnet aspnet-codegenerator identity -dc NJXManagement.Data.ApplicationDbContext --files "Account.Register;Account.Login"
+```
+
+however there were package conflicts so I had to go out and find the scaffolding option
+)
+
+I will continue working on this next week.
