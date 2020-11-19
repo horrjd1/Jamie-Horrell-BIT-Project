@@ -7,7 +7,7 @@ categories: jekyll update
 
 # Database Connection
 
-A challenge I came across this week was connecting the SQL Server project I had created last week with our ASP.NET project. Most tutorials I could find about how to do this expected the project to able to create and use ADO.NET files (ADO.NET is a framework designed to interact with data sources, like databases and XML files). However, our project was unable to create or use any of these types of files. I suspect that this is because the project was created as a .NET standard project instead of a .NET framework. as the correct tools in Visual Studio were installed and Entity Framework was installed via NuGet.
+A challenge I came across this week was connecting the SQL Server project I had created last week with our ASP.NET project. Most tutorials I could find about how to do this expected the project to able to create and use ADO.NET files (ADO.NET is a framework designed to interact with data sources, like databases and XML files). However, our project was unable to create or use any of these types of files. I suspect that this is because the project was created as a .NET standard project instead of a .NET framework, as the correct tools in Visual Studio were installed and Entity Framework was installed via NuGet.
 
 Since this wasn't an option I had to approach connecting to the database manually. To do this I created a connection string in the appsettings.json file:
 
