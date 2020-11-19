@@ -11,6 +11,10 @@ Both me and my team member prepared a 'meeting' to discuss how we would work ove
 
 # Communication
 
+We made sure to communicate on teams regularly to keep up to date on what each other were doing, having a voice meeting when ther ewas more to discuss. Heres some evidence of that:
+
+![communication](/Jamie-Horrell-BIT-Project/images/S2/break-communication.PNG)
+
 # Project Restructure
 
 There were a number of problems that we were facing in our development
