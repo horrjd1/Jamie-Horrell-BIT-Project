@@ -7,14 +7,52 @@ categories: jekyll update
 
 # Material UI Styles
 
-Most of our styling for our site would be managed by Tabler and possibly material UI, but we may have to apply some custom styling to each component to get a theme or alignment going. I had worked with material UI styles in my previous project and knew that this would help us in our development by taking away the need to deal with classes and an ever increasing style sheet. So I taught my team mate how what material ui styles were and how to use them, I did this by making an example makeStyles() infront of him.
+Most of our styling for our site would be managed by Tabler and possibly material UI, but we may have to apply some custom styling to each component to get a theme or alignment going. I had worked with material UI styles in my previous project and knew that this would help us in our development by taking away the need to deal with classes and an ever increasing style sheet. So I taught my team mate what material ui styles were and how to use them, I did this by making an example makeStyles() with him.
+
+Heres an example of how it works:
+
+```javascript
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
+
+
+export default function EmployeesTable() {
+    const classes = useStyles();
+
+    return (
+    <Button className={classes.Button}>Button</Button>
+    )
+}
+```
 
 Link to pull req: https://github.com/Marrnj2/XeroWebProject/pull/22
 
 # Auth
 
-Users need the ability to create an account and login to our site. We found a asp net ____ called identity
+Users need to be able to log into our site seperate from the Xero authentication so I started looking for authentication frameworks that we could use in our project. I found that the most popular or 'recommended' framework is Identity. Its officially supported and has its own section in the Microsoft docs. It also would allow future integration with third party logins such as Google and Twitter etc.
 
-adding this into the project from scratch wasnt working, 
+The only problem was that I tried scaffolding Identity into the project but it wasnt working (this tutorial: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-5.0&tabs=visual-studio). Because of the configuration of the project we chose at the beginning was creating compatability issues between the various NuGet packages. The same problem that was preventing me from generating ADO.NET files.
 
-made new project and copied over stuff from that to our project.
+This meant that I had to follow a tutorial to manually build Identity into the project. This was the only tutorial that I could find that matched our current circumstances: http://bipinjoshi.net/articles/b957238b-e2dd-4401-bfd7-f0b8d984786d.aspx
+
+However after finishing the tutorial the authentication system was still bugged and wouldnt launch. It was at this point that I held a meeting with my teammate to talk about the configuration of our project. Through researching Identity implimentation I had discovered thatthe most recommended way to get Identity was to generate a project with Identity built in. The most viable way to get Identity into our project would be to make a new project with Identity and move our current content into it.
+
+So after weighing up the Pros and Cons we decided that it would be the best idea to regenerate the project. I also took this oppurtunity to fix some issues we were having with the previous project:
+
+- I removed Tabler as it was filling wwwroot with flag svgs and the docs werent very helpful.
+- I made it so the project auto migrates on run so that we wouldnt have to go through a seperate process. I did this with the following small amount of code:
+
+```C#
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext dataContext)
+        {
+            ...
+
+            dataContext.Database.Migrate();
+        }
+```
+
+The pull request for this can be found here:
+https://github.com/Marrnj2/XeroWebProject/pull/45
