@@ -7,10 +7,10 @@ categories: jekyll update
 
 ## Preperation for Internship & final sprint
 
-So I managed to get an internship which is cool, however this internship starts of November the 9th and is a 40 hour work week, so I wasnt really gonna be able to come into project each monday and thursday, and the amount of work that I would be able to complete in my free time would dramatically decrease. So I made sure that my team was well prepared for when this happened. We planned out the last sprint earlier than normal. We made a deadline for ourselfs to get all the functionality of the site done by sunday the 15th so that we could spend the last week focusing on documentation, minor bug fixes and stying alterations. This would mean that our site would be in a presentable state for showcase on the 20th. Since I was going to be working on project outside my work hours my work load for the next sprint was reduced to what I believed I could accomplish and what was most important for the site to have, such as:
-- 
-- 
-- 
+So I managed to get an internship which is cool, however this internship starts of November the 9th and is a 40 hour work week. This meant that it was unlikely that I was going to be able to come into project each Monday and Thursday. It would also mean that the amount of work that I would be able to complete in my free time would dramatically decrease. So I made sure that my team was well prepared for when this happened. We planned out the last sprint earlier than normal. We made a deadline for ourselfs to get all the functionality of the site done by sunday the 15th so that we could spend the last week focusing on documentation, minor bug fixes and stying alterations. This would mean that our site would be in a presentable state for showcase on the 20th. Since I was going to be working on project outside my work hours my work load for the next sprint was reduced to what I believed I could accomplish and what was most important for the site to have, such as:
+- Invoices Page
+- Documentation
+- Adding an escape from the registration page
 
 other front end issues that werent as important were added to a stretch column in our kanban board, such as highlighting what page the user was viewing on the nav drawer.
 
