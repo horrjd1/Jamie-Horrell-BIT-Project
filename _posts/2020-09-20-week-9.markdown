@@ -9,11 +9,11 @@ categories: jekyll update
 
 This week I got my teammate to teach me about how the AWS dashboard and console worked as I hadnt had an oppurtunity to access them so far. here are some screenshots of our web console:
 
-![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-1)
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-1.png)
 
-![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-2)
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-2.png)
 
-![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-3)
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-3.png)
 
 # Clean up Project
 
