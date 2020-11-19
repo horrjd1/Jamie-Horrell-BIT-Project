@@ -7,7 +7,7 @@ categories: jekyll update
 
 # Authentication
 
-Both Nic and I were working together on integrating Xeros OAuth2 samples into our MVC Project. Xero has a [repo](https://github.com/XeroAPI/xero-netstandard-oauth2-samples) in which the have many sample applications for various versions of .NET projects. 
+Both Nic and I were working together on integrating Xeros OAuth2 samples into our MVC Project. Xero has a [repo](https://github.com/XeroAPI/xero-netstandard-oauth2-samples) in which they have many sample applications for various versions of .NET projects. 
 
 We read about how the XeroOAuth2Sample-MVC-PKCE sample worked and tried to implement its features into our site. This would be a good starting point as it would give our site a button that we could use to login to Xero. We could then hopefully make this process automated later on.
 
