@@ -52,7 +52,7 @@ I made sure to look over and test multiple react charting libraries to see which
 - DevExtreme Charts
 - react-chartjs-2
 
-## recharts
+# recharts
 
 I chose recharts because of its customizability, extensive documentation, and how lightweight it is. The documentation provided examples that could very easily be modified to incorporate our API.
 
