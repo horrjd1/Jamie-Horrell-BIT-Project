@@ -15,4 +15,6 @@ One of the things I did was decide on what UI framework would be replacing Table
 
 # Dashboard Start
 
-After deciding on Material UI I could start on making a dashboard template. To make this similar to an admin dashboard I used a material UI drawer for a side menu. For the time it just leads to empty pages.
+After deciding on Material UI I could start on making a dashboard template. To make this similar to an admin dashboard I used a material UI drawer for a side menu. For the time it just leads to empty pages. I will continue making a demo dashboard next week. Here is the current progress:
+
+![dashboard](/Jamie-Horrell-BIT-Project/images/S2/w10-dashboard.png)
