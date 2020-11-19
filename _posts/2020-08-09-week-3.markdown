@@ -12,10 +12,10 @@ Nic and I both followed this tutorial where we used POSTMAN to log into our comp
 https://developer.xero.com/documentation/tools/postman
 
 This OAuth process involved:
-sending an authorization request to Xero to receive an Authorization code
-sending the authorization code to receive an access token
-sending the access token to receive the tenant id
-sending the tenant id and access token to receive the required data from the API
+- sending an authorization request to Xero to receive an Authorization code
+- sending the authorization code to receive an access token
+- sending the access token to receive the tenant id
+- sending the tenant id and access token to receive the required data from the API
 
 Here are some screenshots of the process:
 
@@ -26,9 +26,9 @@ Here are some screenshots of the process:
 
 # Gulp
 
-I had previously wanted to use material UI in our site it had similar benefits to bootstrap but would work much more nicely with a react front end. However, this required us to have node modules installed. 
-Since ASP.NET doesn't have the same folder structure and features of a Node project, I needed a way to make the node_module folder
-accessible. To do this I learned the basics of Gulp in order to make a script to copy the node_modules into the wwwroot folder.
+I had previously wanted to use material UI in our site as it had similar benefits to bootstrap but would work much more nicely with a react front end. However, this required us to have node modules installed. 
+
+Since ASP.NET doesn't have the same folder structure and features of a Node project, I needed a way to make the node_module folder accessible to the site. To do this I learned the basics of Gulp in order to make a script to copy the node_modules into the wwwroot folder.
 
 ```javascript
 var gulp = require("gulp");
