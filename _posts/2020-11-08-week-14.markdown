@@ -63,4 +63,4 @@ Then for the table I was just listing each invoice but made a calculation to con
 
 ![invoice page](/Jamie-Horrell-BIT-Project/images/S2/w14-invoices.png)
 
-Ignore that the dates say 'invalid date'. this seems to just be a problem with the development build on my home machine. They do say Oct 2020, Sep 2020 etc
+(Ignore that the dates say 'invalid date'. This seems to just be a problem with the development build on my home machine at the time of taking this screenshot. They do say Oct 2020, Sep 2020 etc)
