@@ -33,7 +33,7 @@ We were working on this together using vs codes liveshare plugin which I had bee
 
 Once we got the API connection giving back json we could start working on building the pages of the site. We had a look through the API documentation to see what we could potentially have on the site. We found that alot of the bank account data that we were relying on for the dashboard wasnt actually available from the API, which would mean that we would need to remake the dashboard. We decided to start with the employees API as it should be quick (since we're pressured on time) and would give us the ability to make POST requests to make new emplyees and update them.
 
-This is the code I mad eto get that employees data from the API. I used the useEffect hook to call the API and save what it returns into state
+This is the code I made to get that employees data from the API. I used the useEffect hook to call the API and save what it returns into state
 
 ```javascript
     const [employeeData, setEmployeeData] = useState([]);
@@ -64,23 +64,27 @@ This is the code I mad eto get that employees data from the API. I used the useE
     };
 ```
 
-Since this data was saved in the state the data grid would automatically update.
+Since this data was saved in the state the table would automatically update.
 
 ```javascript
-const columns = [
-  { field: 'fname', headerName: 'First name', width: 130 },
-  { field: 'lname', headerName: 'Last name', width: 130 },
-  { field: 'email', headerName: 'Email', width: 250 },
-  { field: 'phone', headerName: 'Phone Number', width: 160 },
-  { field: 'startDate', headerName: 'Start Date', width: 130 },
-  { field: 'endDate', headerName: 'End Date', width: 130 },
-];
+  <TableBody>
+    {employeeData.map((employee) => (
+        <TableRow key={employee.id}>
+            <TableCell component="th" scope="row" padding="none">
+              <UpdateEmployeeDialog employee={employee}/>
+            </TableCell>
+            <TableCell>{employee.fname}</TableCell>
+            <TableCell>{employee.lname}</TableCell>
+            <TableCell>{employee.email}</TableCell>
+            <TableCell>{employee.phone}</TableCell>
+            <TableCell>{employee.startDate}</TableCell>
+            <TableCell>{employee.endDate}</TableCell>
+        </TableRow>
+    ))}
+  </TableBody>
 ```
 
-```javascript
- <DataGrid rows={employeeData} columns={columns} pageSize={15} checkboxSelection />
-```
-
+![employee table](/Jamie-Horrell-BIT-Project/images/S2/w13-employees.png)
 
 # Adding an Employee Dialog
 
@@ -139,3 +143,85 @@ const handleSubmit = (evt) => {
     handleClose()
 }
 ```
+
+![employee table](/Jamie-Horrell-BIT-Project/images/S2/w13-add-employee.png)
+
+# Update an Employee
+
+I could then make the update employee Dialog. This worked similarly to the add employee dialog. when the user clicks the edit button that would send that employee as a prop to the employee dialog component.
+
+```javascript
+export default function UpdateEmployeeDialog(props) {
+  const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+
+  console.log(props.employee);
+  const [eID] = useState(props.employee.id);
+  const [fname, setFName] = useState(props.employee.fname);
+  const [lname, setLName] = useState(props.employee.lname);
+  const [dob, setDOB] = useState(props.employee.dob);
+  const [email, setEmail] = useState(props.employee.email);
+  const [phone, setPhone] = useState(props.employee.phoneNumber);
+  const [address1, setAddress1] = useState(props.employee.address1);
+  const [address2, setAddress2] = useState(props.employee.address2);
+  const [city, setCity] = useState(props.employee.city);
+  const [postcode, setPostCode] = useState(props.employee.postcode);
+```
+
+Since all the employee data was saved into state i could potentially make live validation and can easily prefill each of the text fields.
+
+```javascript
+<TextField
+  autoFocus
+  required
+  margin="dense"
+  label="First Name"
+  type="text"
+  fullWidth
+  variant="outlined"
+  value={fname}
+  onChange={e => setFName(e.target.value)}
+/>
+```
+
+I could then send this data to our end point that would update send a request to the API to update the employee.
+
+```javascript
+const handleSubmit = evt => {
+    evt.preventDefault();
+    
+    var employee = {
+      firstName: fname,
+      lastName: lname,
+      dateOfBirth: dob + "T00:00:00",
+      email: email,
+      phoneNumber: phone,
+      address: {
+        addressLine1: address1,
+        addressLine2: address2,
+        city: city,
+        postCode: postcode
+      }
+    };
+    
+    fetch(`Employee/Edit/${eID}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(employee),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+    handleClose();
+  };
+```
+
+![employee table](/Jamie-Horrell-BIT-Project/images/S2/w13-update-employee.png)
