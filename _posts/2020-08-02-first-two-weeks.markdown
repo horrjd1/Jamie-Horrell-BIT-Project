@@ -14,28 +14,28 @@ When I got back into Project this semester I got informed about a lot of stuff t
 
 We mostly spent the first two weeks getting familiar with what we were going to be working on and started setting up the AWS server to contain our deployed work.
 
-### Communication
+# Communication
 
 We set up a teams group for us to communicate on with various channels for meetings, resources, issue help etc. This would be our primary way of communicating out side of Polytech.
 
-### Setting up the ASP.NET project
+# Setting up the ASP.NET project
 
 To get an ASP.NET project set up I followed this tutorial:
 
-https://reactjs.net/tutorials/aspnetcore.html
+[https://reactjs.net/tutorials/aspnetcore.html](https://reactjs.net/tutorials/aspnetcore.html)
 
 However during the later parts, it just turned into a React tutorial, and I was already familiar with react from Webc3 and my last Project. Since this tutorial didn't talk very much about what ASP.NET is I did my own research into it, mainly looking at Microsoft resources and docs such as:
 
-https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet
+[https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet)
 
-### AWS
+# AWS Setup
 
 Nic and I spent most of our time during project hours setting up the AWS server. We worked together following this tutorial I found to get the ubuntu VM set up:
 
-https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html
+[https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html](https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html)
 
 We then deployed the default ASP.NET project that I had created from the tutorial to check that our deployment had worked and was publically visible.
 
-### Xero
+# Xero Account
 
 We also made an account on Xero and created a demo company.
