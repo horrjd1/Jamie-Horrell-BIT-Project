@@ -9,7 +9,7 @@ categories: jekyll update
 
 Nic and I both followed this tutorial where we used POSTMAN to log into our companies Xero account using the OAuth workflow to receive data from the API.
 
-https://developer.xero.com/documentation/tools/postman
+[https://developer.xero.com/documentation/tools/postman](https://developer.xero.com/documentation/tools/postman)
 
 This OAuth process involved:
 - sending an authorization request to Xero to receive an Authorization code
