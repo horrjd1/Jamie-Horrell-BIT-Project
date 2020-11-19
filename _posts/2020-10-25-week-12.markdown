@@ -5,7 +5,7 @@ date:   2020-10-25 19:34:48 +1300
 categories: jekyll update
 ---
 
-# Login Registration pages
+# Login/Registration Pages
 
 I had four options when it came to designing our auth pages:
 - make cshtml files to look similar to material ui
@@ -63,7 +63,7 @@ heres an example of the register page I made
 }
 ```
 
-SCREENSHOT
+![dashboard](/Jamie-Horrell-BIT-Project/images/S2/w12-register.png)
 
 # API Help
 
