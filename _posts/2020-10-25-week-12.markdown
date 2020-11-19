@@ -13,7 +13,7 @@ I had four options when it came to designing our auth pages:
 - make own registration pages from scratch using the api-authorization components that were generated when the project was made
 - move away from Identity and use a auth service that integrates with react
 
-I decided that since the API was close to being completed and i would have to spend the rest of my project time working on that the most bang for our time option would be the best for the project. This meant that I chose the option to rebuild the cshtml files to look similar to our material ui setup.
+I decided that since the API was close to being completed and I would have to spend the rest of my project time working on that, that the most bang for our time option would be the best for the project. This meant that I chose the option to rebuild the cshtml files to look similar to our material ui setup using similar fonts and text box styles etc.
 
 heres an example of the register page I made
 ```html
