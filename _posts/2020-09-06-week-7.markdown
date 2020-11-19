@@ -50,6 +50,4 @@ I made sure to leave a full explanation for all the changes and how the project 
 [https://github.com/Marrnj2/XeroWebProject/pull/21](https://github.com/Marrnj2/XeroWebProject/pull/21)
 
 ![pull request](/Jamie-Horrell-BIT-Project/images/S2/w7-pull.png)
-
-As mentioned in that pull req I also converted our current jsx files to js and added some new npm commands to run webpack and build the site.
  
