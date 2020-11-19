@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "Week 16 (Final Week)"
+date:   2020-11-15 19:34:48 +1300
+categories: jekyll update
+---
+
+## Documentation
+
+This week I focused on writing documentation so that theoritical future students coming into the project would be able to understand the the technology being used, the projects structure and what they need to do to get the project running on their systems.
+
+Here are links to the repos wiki pages I made: [here](https://github.com/Marrnj2/XeroWebProject/wiki)
+
+I made the following pages:
+- Home - Introduction to the project
+- Getting Started - What the user needs to do to get the project running on their system
+- Folder Structure - What each directory is for in the project
+- Technology - What frameworks we used (specifically for front end)
+- Deployment - How to access the server and deploy new changes
+
+I also went through my code to make sure that it had a suffecient level of comments. Most of my code was commented like the following:
+
+```javascript
+/*
+* A component containing a table listing all the invoices from the API sorted by due date
+* @component
+*/
+export default function InvoiceTable() {
+    const classes = useStyles();
+
+    const [invoicesData, setInvoicesData] = useState([]);
+
+    // on component load get api data
+    useEffect(() => {
+      getInvoicesData();
+    }, []);
+  
+    // get employee data from api
+    const getInvoicesData = async () => {
+      console.log("START API REQUEST")
+      const response = await fetch("Xero/Invoices");
+      const jsonData = await response.json();
+      console.log(jsonData.Invoices);
+
+      // sort invoices on due date
+      jsonData.Invoices.sort((a, b) => b.DueDateString.localeCompare(a.DueDateString));
+
+      // save into state
+      setInvoicesData(jsonData.Invoices)
+    };
+
+```
