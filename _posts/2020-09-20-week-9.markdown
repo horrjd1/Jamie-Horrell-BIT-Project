@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Week 9"
+date:   2020-09-20 19:34:48 +1300
+categories: jekyll update
+---
+
+# AWS
+
+This week I got my teammate to teach me about how the AWS dashboard and console worked as I hadnt had an oppurtunity to access them so far. here are some screenshots of our web console:
+
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-1)
+
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-2)
+
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-aws-3)
+
+# Clean up Project
+
+Dont know if this needs to be said but every week or two I have been cleaning up the repo by closing issues that have been completed or updating issues that arent accurate with our current plans anymore etc.
+
+# Removing client id and secret from git flow
+
+It was during this week that I caught that our client id and client secret from our appsettings.json file were in our git repo. This was bad practice and to solve it I removed those specific codes from file, and uploaded a version with placeholder information that should be filled out by the developer on theor local machine. I then created a wiki page in our teams chat that would hold all the confidetial passwords and codes for our application.
+
+![aws](/Jamie-Horrell-BIT-Project/images/S2/w9-wiki.png)
