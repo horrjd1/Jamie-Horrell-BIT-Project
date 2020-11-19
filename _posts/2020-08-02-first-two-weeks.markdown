@@ -8,7 +8,7 @@ categories: jekyll update
 
 # A Change in Project
 
-When I got back into Project this semester I got informed about a lot of the stuff that has been going on in the background of my previous project over the break. I don't know if I should write about all that here but our old project was in a bad state and most parts would have had to of been rebuilt. At the time it also didn't look like anyone was going to join the project and that I was going to be the only member of a team working on it. I got offered by a group of studio 5 students to join them as they were starting a new web project and needed 1 more member. So after talking to Trent (One of my previous project members who had done worked on it over the break) and David, I made the decision to change projects, in order to learn more web technologies and work in a team with other students.
+When I got back into Project this semester I got informed about a lot of stuff that has been going on in the background of my previous project over the break. I don't know if I should write about all that here but our old project was in a bad state and most parts would have had to of been rebuilt. At the time it also didn't look like anyone was going to join the project and that I was going to be the only member of a team working on it. I got offered by a group of studio 5 students to join them as they were starting a new web project and needed one more member. So after talking to Trent (One of my previous project members who had done work on it over the break) and David, I made the decision to change projects, in order to learn more web technologies and work in a team with other students.
 
 # First Two Weeks
 
@@ -20,7 +20,7 @@ To get an ASP.NET project set up I followed this tutorial:
 
 https://reactjs.net/tutorials/aspnetcore.html
 
-However during the later parts, it just turned into a React tutorial, and I was already familiar with react from Web3 and my last Project. Since this tutorial didn't talk very much about what ASP.NET is I did my own research into it, mainly looking at Microsoft resources and docs such as:
+However during the later parts, it just turned into a React tutorial, and I was already familiar with react from Webc3 and my last Project. Since this tutorial didn't talk very much about what ASP.NET is I did my own research into it, mainly looking at Microsoft resources and docs such as:
 
 https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet
 
