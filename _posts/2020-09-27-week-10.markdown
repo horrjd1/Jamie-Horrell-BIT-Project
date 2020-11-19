@@ -7,7 +7,7 @@ categories: jekyll update
 
 # Workload
 
-I had a lot going on outside of Polytech this week (Mainly making my CV, cover letters, and attending a job interview) so I didn't have much time to work on a project outside of polytech.
+I had a lot going on outside of Polytech this week (Mainly making my CV, cover letters, attending a job interview and other class assignments) so I didn't have much time to work on a project outside of polytech.
 
 # Material UI
 
