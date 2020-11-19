@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "Week 13"
+date:   2020-11-01 19:34:48 +1300
+categories: jekyll update
+---
+
+# Working with our API
+
+I worked with my teammate to get the Xero API returning data that we could use to build our pages. To do this we made two different end points that our react code could call to get dat from the API. 
+
+```javascript
+[Route("Payroll/{endPoint}")]
+        public IActionResult FetchPayroll(string endPoint)
+        {
+            var recall = _client.PayrollCall(_accessToken, _bearerModel, endPoint);
+            return Content(recall);
+        }
+[Route("Xero/{endPoint}")]
+        public IActionResult FetchXero(string endPoint)
+        {
+            var recall = _client.AccountsCall(_accessToken, _bearerModel, endPoint);
+            return Content(recall);
+        }
+```
+
+Doing it like this meant that we could call for any Xero api route we needed from the javascript code.
+
+We were working on this together using vs codes liveshare plugin which I had been taught in my previous project and was able to teach Nic.
+
+
+# Employees Table
+
+Once we got the API connection giving back json we could start working on building the pages of the site. We had a look through the API documentation to see what we could potentially have on the site. We found that alot of the bank account data that we were relying on for the dashboard wasnt actually available from the API, which would mean that we would need to remake the dashboard. We decided to start with the employees API as it should be quick (since we're pressured on time) and would give us the ability to make POST requests to make new emplyees and update them.
+
+This is the code I mad eto get that employees data from the API. I used the useEffect hook to call the API and save what it returns into state
+
+```javascript
+    const [employeeData, setEmployeeData] = useState([]);
+
+    // on component load get api data
+    useEffect(() => {
+      getEmployeeData();
+    }, []);
+
+    // get employee data from api
+    const getEmployeeData = async () => {
+      const response = await fetch("Payroll/employees ");
+      const jsonData = await response.json();
+
+      let employees = jsonData["employees"];
+
+      // get necessary employee fields and handle their date fields
+      let employeeRows = []
+      for (const employee in employees) {
+        employeeRows.push(makeEmployeeData(employees[employee]))
+      }
+
+      // sort by last name
+      employeeRows.sort((a, b) => a.lname.localeCompare(b.lname));
+
+      // save into state
+      setEmployeeData(employeeRows)
+    };
+```
+
+Since this data was saved in the state the data grid would automatically update.
+
+```javascript
+const columns = [
+  { field: 'fname', headerName: 'First name', width: 130 },
+  { field: 'lname', headerName: 'Last name', width: 130 },
+  { field: 'email', headerName: 'Email', width: 250 },
+  { field: 'phone', headerName: 'Phone Number', width: 160 },
+  { field: 'startDate', headerName: 'Start Date', width: 130 },
+  { field: 'endDate', headerName: 'End Date', width: 130 },
+];
+```
+
+```javascript
+ <DataGrid rows={employeeData} columns={columns} pageSize={15} checkboxSelection />
+```
+
+
+# Adding an Employee Dialog
+
+To go alongside the employee table I made a dialog to add an employee. To do this I made a state for each text field and would update that state whenever the contents of the text field change.
+
+```javascript
+  <TextField
+    autoFocus
+    required
+    margin="dense"
+    label="First Name"
+    type="text"
+    fullWidth
+    variant="outlined"
+    value={fname}
+    onChange={e => setFName(e.target.value)}
+  />
+```
+
+This not only provided me an easy way of getting the form data but would also provide the option of live validation if were were to add it in the future. Once the form is submitted I could then send the employee data an end point in our back end.
+
+```javascript
+const handleSubmit = (evt) => {
+    evt.preventDefault();
+    var employee = {
+        firstName: fname,
+        lastName: lname,
+        dateOfBirth: dob + "T00:00:00",
+        email: email,
+        phoneNumber: phone,
+        address: {
+            addressLine1: address1,
+            addressLine2: address2,
+            city: city,
+            postCode: postcode
+        }
+    }
+    console.log(employee)
+
+    // send to back end
+    fetch('Employee/Add/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(employee),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+    handleClose()
+}
+```
