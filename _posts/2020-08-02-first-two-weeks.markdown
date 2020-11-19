@@ -14,6 +14,10 @@ When I got back into Project this semester I got informed about a lot of stuff t
 
 We mostly spent the first two weeks getting familiar with what we were going to be working on and started setting up the AWS server to contain our deployed work.
 
+### Communication
+
+We set up a teams group for us to communicate on with various channels for meetings, resources, issue help etc. This would be our primary way of communicating out side of Polytech.
+
 ### Setting up the ASP.NET project
 
 To get an ASP.NET project set up I followed this tutorial:
