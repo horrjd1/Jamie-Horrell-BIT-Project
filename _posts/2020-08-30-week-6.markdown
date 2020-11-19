@@ -7,13 +7,57 @@ categories: jekyll update
 
 # CRUD
 
-to test the database
-setting up crud with scaffolding
-made crud to test adding getting updateing etc
+To test that the database was working I quickly set up some CRUD pages using Visual Studios scaffolding feature. This quickly created some models and pages that I could use to display the students that were in the database on a webpage, and of course edit and delete them.
+
+For example here is the page responsible for displaying the create student dialog:
+
+```html
+@model NJXManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+```
+
+The pull request for all content relating to the database can be found here:
+https://github.com/Marrnj2/XeroWebProject/pull/15
 
 
 # Components presets
 
-I was also looking for css templates and react component templates for us to use in our site as this would save us alot of development time. I didnt manage to find any css 
+I was also looking for CSS templates or react component templates that we could use on our site as this would save us a lot of development time specifically when it came to styling. I didn't manage to find any fantastic CSS frameworks that would match the content that we were trying to create, but I did manage to find a React component framework called Tabler which has components that look very similar to those used in Xeros admin dashboard.
 
-I managed to find a template called Tabler https://tabler-react.com/ which have components that look very similar to those used in zeros admin dashboard
+https://tabler-react.com/
