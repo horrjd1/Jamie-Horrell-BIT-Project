@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "Week 12"
+date:   2020-10-25 19:34:48 +1300
+categories: jekyll update
+---
+
+# Login Registration pages
+
+I had four options when it came to designing our auth pages:
+- make cshtml files to look similar to material ui
+- make auth cshtml files load a react module that contains the new page content
+- make own registration pages from scratch using the api-authorization components that were generated when the project was made
+- move away from Identity and use a auth service that integrates with react
+
+I decided that since the API was close to being completed and i would have to spend the rest of my project time working on that the most bang for our time option would be the best for the project. This meant that I chose the option to rebuild the cshtml files to look similar to our material ui setup.
+
+heres an example of the register page I made
+```html
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Create a new account";
+}
+
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-5">
+        <div class="card" id="authCard">
+            <div class="card-body">
+                <h3 class="text-center">@ViewData["Title"]</h3>
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary auth-form-btn">Register</button>
+                    </div>
+                    <p>
+                        Already have an account? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+```
+
+SCREENSHOT
+
+# API Help
+
+Even though ive been doing this all semester just giving an example. My teammate was having a little trouble with a response that he was getting back from the Xero API so I took some time to help him, suggesting solutions (such as testing in Postman first) and eventually working alongside him to get it closer to working.
