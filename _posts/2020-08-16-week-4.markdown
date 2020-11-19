@@ -7,12 +7,75 @@ categories: jekyll update
 
 # Authentication
 
-Both Nic and I were working together on integrating Xeros OAuth2 samples into our MVC Project. Xero has a repo in which the have many sample applications for various versions of .NET projects. 
-
-https://github.com/XeroAPI/xero-netstandard-oauth2-samples
+Both Nic and I were working together on integrating Xeros OAuth2 samples into our MVC Project. Xero has a [repo](https://github.com/XeroAPI/xero-netstandard-oauth2-samples) in which the have many sample applications for various versions of .NET projects. 
 
 We read about how the XeroOAuth2Sample-MVC-PKCE sample worked and tried to implement its features into our site. This would be a good starting point as it would give our site a button that we could use to login to Xero. We could then hopefully make this process automated later on.
 
 # Database
 
-At the end of the week while Nic was fixing an issue with the OAuth process in our project I started work on setting up a database. I created a SQL Server Database Project using Visual Studio that would run alongside our Xero application. At this point, we were still unsure of what the database was going to be used for since the auth was going to be handled by Xero and I didn't look like we would need to store any other information permanently for the site, so I created dummy SQL files that would create some small tables on students, courses, and enrolments. On top of this, I created the file Script.PostDeployment1.sql that would populate the tables. These should come in handy later to use as a reference when we need to use the database.
+At the end of the week while Nic was fixing an issue with the OAuth process in our project I started work on setting up a database. I created a SQL Server Database Project using Visual Studio that would run alongside our Xero application. At this point, we were still unsure of what the database was going to be used for since the auth was going to be handled by Xero and I didn't look like we would need to store any other information permanently for the site, so I created dummy SQL files that would create some small tables on students, courses, and enrolments. On top of this, I created the file Script.PostDeployment1.sql that would populate the tables. These should come in handy later to use as a reference when we need to set up the database.
+
+TestStudent.sql
+```sql
+CREATE TABLE [dbo].[TestStudent] (
+    [StudentID]      INT           IDENTITY (1, 1) NOT NULL,
+    [LastName]       NVARCHAR (50) NULL,
+    [FirstName]      NVARCHAR (50) NULL,
+    [EnrollmentDate] DATETIME      NULL,
+    PRIMARY KEY CLUSTERED ([StudentID] ASC)
+) 
+```
+
+Script.PostDeployment1.sql
+```sql
+/*
+Post-Deployment Script Template							
+--------------------------------------------------------------------------------------
+ This file contains SQL statements that will be appended to the build script.		
+ Use SQLCMD syntax to include a file in the post-deployment script.			
+ Example:      :r .\myfile.sql								
+ Use SQLCMD syntax to reference a variable in the post-deployment script.		
+ Example:      :setvar TableName MyTable							
+               SELECT * FROM [$(TableName)]					
+--------------------------------------------------------------------------------------
+*/
+
+MERGE INTO TestCourse AS Target 
+USING (VALUES 
+        (1, 'Economics', 3), 
+        (2, 'Literature', 3), 
+        (3, 'Chemistry', 4)
+) 
+AS Source (CourseID, Title, Credits) 
+ON Target.CourseID = Source.CourseID 
+WHEN NOT MATCHED BY TARGET THEN 
+INSERT (Title, Credits) 
+VALUES (Title, Credits);
+
+MERGE INTO TestStudent AS Target
+USING (VALUES 
+        (1, 'Tibbetts', 'Donnie', '2013-09-01'), 
+        (2, 'Guzman', 'Liza', '2012-01-13'), 
+(3, 'Catlett', 'Phil', '2011-09-03')
+)
+AS Source (StudentID, LastName, FirstName, EnrollmentDate)
+ON Target.StudentID = Source.StudentID
+WHEN NOT MATCHED BY TARGET THEN
+INSERT (LastName, FirstName, EnrollmentDate)
+VALUES (LastName, FirstName, EnrollmentDate);
+
+MERGE INTO TestEnrollment AS Target
+USING (VALUES 
+(1, 2.00, 1, 1),
+(2, 3.50, 1, 2),
+(3, 4.00, 2, 3),
+(4, 1.80, 2, 1),
+(5, 3.20, 3, 1),
+(6, 4.00, 3, 2)
+)
+AS Source (EnrollmentID, Grade, CourseID, StudentID)
+ON Target.EnrollmentID = Source.EnrollmentID
+WHEN NOT MATCHED BY TARGET THEN
+INSERT (Grade, CourseID, StudentID)
+VALUES (Grade, CourseID, StudentID); 
+```
