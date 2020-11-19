@@ -8,11 +8,12 @@ categories: jekyll update
 ## Preperation for Internship & final sprint
 
 So I managed to get an internship which is cool, however this internship starts of November the 9th and is a 40 hour work week. This meant that it was unlikely that I was going to be able to come into project each Monday and Thursday. It would also mean that the amount of work that I would be able to complete in my free time would dramatically decrease. So I made sure that my team was well prepared for when this happened. We planned out the last sprint earlier than normal. We made a deadline for ourselfs to get all the functionality of the site done by sunday the 15th so that we could spend the last week focusing on documentation, minor bug fixes and stying alterations. This would mean that our site would be in a presentable state for showcase on the 20th. Since I was going to be working on project outside my work hours my work load for the next sprint was reduced to what I believed I could accomplish and what was most important for the site to have, such as:
-- Invoices Page
+- Finishing touches on the Invoices page
+- Making a quick dashboard
 - Documentation
 - Adding an escape from the registration page
 
-other front end issues that werent as important were added to a stretch column in our kanban board, such as highlighting what page the user was viewing on the nav drawer.
+Other front end issues that werent as important were added to a stretch column in our kanban board, such as highlighting what page the user was viewing on the nav drawer.
 
 
 ## Invoices
@@ -43,3 +44,23 @@ My major development for this week was the invoices page on our site. One of the
     }, new Map).values()];
 
 ```
+
+Then for the table I was just listing each invoice but made a calculation to conditionally render either an Open or a Paid box on the side
+
+```javascript
+    const OpenState = () => {
+      return <div className={classes.openState}>Open</div>
+    }
+
+    const PaidState = () => {
+      return <div className={classes.paidState}>Paid</div>
+    }
+```
+
+```javascript
+<TableCell>{(invoice["Total"] - invoice["AmountPaid"]) > 0 ? OpenState() : PaidState()}</TableCell>
+```
+
+![invoice page](/Jamie-Horrell-BIT-Project/images/S2/w14-invoices.PNG)
+
+Ignore that the dates say 'invalid date'. this seems to just be a problem with the development build on my home machine. They do say Oct 2020, Sep 2020 etc
