@@ -7,7 +7,7 @@ categories: jekyll update
 
 # Working with our API
 
-I worked with my teammate to get the Xero API returning data that we could use to build our pages. To do this we made two different end points that our react code could call to get dat from the API. 
+I worked with my teammate to get the Xero API returning data that we could use to build our pages. To do this we made two different endpoints that our react code could call to get data from the API. 
 
 ```javascript
 [Route("Payroll/{endPoint}")]
@@ -24,16 +24,16 @@ I worked with my teammate to get the Xero API returning data that we could use t
         }
 ```
 
-Doing it like this meant that we could call for any Xero api route we needed from the javascript code.
+Doing it like this meant that we could call for any Xero API route we needed from the javascript code.
 
-We were working on this together using vs codes liveshare plugin which I had been taught in my previous project and was able to teach Nic.
+We were working on this together using vs codes live share plugin which I had been taught in my previous project and was able to teach Nic.
 
 
 # Employees Table
 
-Once we got the API connection giving back json we could start working on building the pages of the site. We had a look through the API documentation to see what we could potentially have on the site. We found that alot of the bank account data that we were relying on for the dashboard wasnt actually available from the API, which would mean that we would need to remake the dashboard. We decided to start with the employees API as it should be quick (since we're pressured on time) and would give us the ability to make POST requests to make new emplyees and update them.
+Once we got the API connection giving back JSON we could start working on building the pages of the site. We had a look through the API documentation to see what we could potentially have on the site. We found that a lot of the bank account data that we were relying on for the dashboard wasn't actually available from the API, which would mean that we would need to remake the dashboard. We decided to start with the employees API as it should be quick (since we're pressured on time) and would give us the ability to make POST requests to make new employees and update them.
 
-This is the code I made to get that employees data from the API. I used the useEffect hook to call the API and save what it returns into state
+This is the code I made to get that employee's data from the API. I used the useEffect hook to call the API and save what it returns into state
 
 ```javascript
     const [employeeData, setEmployeeData] = useState([]);
@@ -104,7 +104,7 @@ To go alongside the employee table I made a dialog to add an employee. To do thi
   />
 ```
 
-This not only provided me an easy way of getting the form data but would also provide the option of live validation if were were to add it in the future. Once the form is submitted I could then send the employee data an end point in our back end.
+This not only provided me an easy way of getting the form data but would also provide the option of live validation if we were to add it in the future. Once the form is submitted I could then send the employee data an endpoint in our back end.
 
 ```javascript
 const handleSubmit = (evt) => {
@@ -185,7 +185,7 @@ Since all the employee data was saved into state i could potentially make live v
 />
 ```
 
-I could then send this data to our end point that would update send a request to the API to update the employee.
+I could then send this data to our endpoint that would update send a request to the API to update the employee.
 
 ```javascript
 const handleSubmit = evt => {
