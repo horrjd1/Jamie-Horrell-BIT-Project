@@ -60,4 +60,4 @@ The pull request for all content relating to the database can be found [here](ht
 
 I was also looking for CSS templates or react component templates that we could use on our site as this would save us a lot of development time specifically when it came to styling. I didn't manage to find any fantastic CSS frameworks that would match the content that we were trying to create, but I did manage to find a React component framework called Tabler which has components that look very similar to those used in Xeros admin dashboard.
 
-https://tabler-react.com/
+[https://tabler-react.com/](https://tabler-react.com/)
