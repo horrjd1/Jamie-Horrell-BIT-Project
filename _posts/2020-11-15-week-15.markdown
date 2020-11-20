@@ -5,13 +5,13 @@ date:   2020-11-15 19:34:48 +1300
 categories: jekyll update
 ---
 
-## Doing What I Can
+# Doing What I Can
 
-So since I am currently working at my internship I dont have much time to work on Project. however because we had planned out a good amount of work for me do over the last week I was able to get my issues almost all complete. These involved:
+So since I am currently working at my internship I don't have much time to work on Project. However, because we had planned out a good amount of work for me do over the last week I was able to get my issues almost all complete. These involved:
 - Finishing up the invoices page
 - Making some quick components for the dashboard
 - Prefilling the update employee dialog with the correct information
 - Adding a link out of the registration page to the login page
 
-There was one issue that I found with the dashboard. The dashboard was attempting to make an API call before the login redirect commenced. Since the login hadnt been completed by the user the OAuth call couldnt be completed and therefor created an error. This meant that launching the project would immediatly error when launched. To solve this problem I seperated the home page (/) and the dashboard (/dashboard) and redirected to the dashboard after a login. This would also mean that if the project were to continue then it would be possible to make a homepage for before the user logs in, instead dof immediatly redirecting them to the login page.
+There was one issue that I found with the dashboard. The dashboard was attempting to make an API call before the login redirect commenced. Since the login hadn't been completed by the user the OAuth call couldn't be completed and therefore created an error. This meant that launching the project would immediately error when launched if the user didn't click 'remember me' when logging in previously. To solve this problem I moved the dashboard to its own url path (/dashboard) and left the default page (/) empty. This would prevent the dashboard from trying to make an API call before it had been redirected to the login. I then made successful logins redirect to /dashboard. Separating the dashboard and home page would also allow us to make a homepage promoting the site before a user logs in.
 
