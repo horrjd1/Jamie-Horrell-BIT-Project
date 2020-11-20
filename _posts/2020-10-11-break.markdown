@@ -52,7 +52,7 @@ I made sure to look over and test multiple react charting libraries to see which
 - DevExtreme Charts
 - react-chartjs-2
 
-# recharts
+# Recharts
 
 I chose recharts because of its customizability, extensive documentation, and how lightweight it is. The documentation provided examples that could very easily be modified to incorporate our API.
 
@@ -65,9 +65,12 @@ Examples of code I used to make the charts that loaded external data:
         width={500}
         height={300}
         data={data}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
+        margin={
+          top: 5, 
+          right: 30, 
+          left: 20, 
+          bottom: 5,
+        }
     >
         <XAxis dataKey="name" />
         <Tooltip />
@@ -80,12 +83,12 @@ Examples of code I used to make the charts that loaded external data:
 <ResponsiveContainer>
     <AreaChart
         data={data}
-        margin={{
+        margin={
             top: 10,
             right: 0,
             left: 0,
             bottom: 0,
-        }}
+        }
     >
         <XAxis dataKey="name" />
         <Tooltip />
