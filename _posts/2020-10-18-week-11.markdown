@@ -57,7 +57,7 @@ to this:
     </NavItem>
 ```
 
-# styling 
+# Styling 
 
 The second issue I started to tackle was the default identity pages that were currently being used on our site. The styling of these pages didnt match the style of our dashboard and included text that was only intended to be seen by the developers and not the end user.
 
